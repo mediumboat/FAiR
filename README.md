@@ -38,4 +38,8 @@ It is also possible to use reader's own dataloader to produce proper formatted d
 
 ## 5. Other instructions
 
-The implementation of different components of FAiR can be found in Model.py (i.e., class `Filter`, `Discriminator` and `BaseRecModel`). The feature initialization (i.e., `pertrain()` in class `FAiR`) and adversarial training process (i.e., `adv_train()` in class `FAiR`) are also in the same file. Reader can have their own implementations on those compoments using other kinds of backbones.
+The implementation of different components of FAiR can be found in Model.py (i.e., class `Filter`, `Discriminator` and `BaseRecModel`). The feature initialization (i.e., `pertrain()` in class `FAiR`) and adversarial training process (i.e., `adv_train()` in class `FAiR`) are also in the same file. Readers can have their own implementations on those compoments using other kinds of backbones.
+
+## 6. Contact
+
+For any questions, please contact me (zzliu[DOT]2020[AT]phdcs[DOT]smu[DOT]edu[DOT]sg)
