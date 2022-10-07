@@ -69,20 +69,20 @@ def main(flags):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default='movielens', type=str, help="The dataset used.")
-    parser.add_argument("--dimension", type=int, help="number of features per user/item.")
-    parser.add_argument("--d_step", type=int, help="number of discriminator training steps")
-    parser.add_argument("--g_step", type=int, help="number of generator training steps")
-    parser.add_argument("--batch_size", type=int, help="batch size")
-    parser.add_argument("--n_user_samples", type=int,
+    parser.add_argument("--dimension", default=128, type=int, help="number of features per user/item.")
+    parser.add_argument("--d_step", default=1, type=int, help="number of discriminator training steps")
+    parser.add_argument("--g_step", default=1, type=int, help="number of generator training steps")
+    parser.add_argument("--batch_size", default=1600, type=int, help="batch size")
+    parser.add_argument("--n_user_samples", default=128, type=int,
                         help="batch of users for training implicit discriminator")
     parser.add_argument("--n_rec", default=10, type=int,
                         help="number of recommendation")
-    parser.add_argument("--n_item_samples", type=int,
+    parser.add_argument("--n_item_samples", default=200, type=int,
                         help="batch of items for training implicit discriminator")
-    parser.add_argument("--lambda_1", type=float, help="weight parameter for generator loss")
-    parser.add_argument("--lambda_2", type=float, help="weight parameter for generator loss")
-    parser.add_argument("--lambda_3", type=float, help="weight parameter for generator loss")
-    parser.add_argument("--reg_term", type=float, help="A term for parameter regularization.")
+    parser.add_argument("--lambda_1", default=1.0, type=float, help="weight parameter for generator loss")
+    parser.add_argument("--lambda_2", default=1.0, type=float, help="weight parameter for generator loss")
+    parser.add_argument("--lambda_3", default=1.0, type=float, help="weight parameter for generator loss")
+    parser.add_argument("--reg_term", default=0.00001, type=float, help="A term for parameter regularization.")
     parser.add_argument("--rec_layer_units",
                         default=[128, 64, 32, 16, 8],
                         type=list,
@@ -101,11 +101,11 @@ if __name__ == "__main__":
                         help="number of nodes each layer for MLP layers in Implicit Discriminators")
     parser.add_argument("--epoch", default=200, type=int,
                         help="Number of epochs in the training")
-    parser.add_argument("--n_test_negative_samples", type=int,
+    parser.add_argument("--n_test_negative_samples", default=10, type=int,
                         help="ratio of negative samples each user")
-    parser.add_argument("--n_train_negative_samples", type=int,
+    parser.add_argument("--n_train_negative_samples", default=0, type=int,
                         help="ratio of negative samples each user")
-    parser.add_argument("--n_pretrain", type=int,
+    parser.add_argument("--n_pretrain", default=10, type=int,
                         help="number of pretrain epochs.")
     flag = parser.parse_args()
     main(flag)
