@@ -70,19 +70,19 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default='movielens', type=str, help="The dataset used.")
     parser.add_argument("--dimension", default=128, type=int, help="number of features per user/item.")
-    parser.add_argument("--d_step", default=1, type=int, help="number of discriminator training steps")
+    parser.add_argument("--d_step", default=5, type=int, help="number of discriminator training steps")
     parser.add_argument("--g_step", default=1, type=int, help="number of generator training steps")
     parser.add_argument("--batch_size", default=1600, type=int, help="batch size")
-    parser.add_argument("--n_user_samples", default=128, type=int,
+    parser.add_argument("--n_user_samples", default=200, type=int,
                         help="batch of users for training implicit discriminator")
     parser.add_argument("--n_rec", default=10, type=int,
                         help="number of recommendation")
-    parser.add_argument("--n_item_samples", default=200, type=int,
+    parser.add_argument("--n_item_samples", default=128, type=int,
                         help="batch of items for training implicit discriminator")
     parser.add_argument("--lambda_1", default=1.0, type=float, help="weight parameter for generator loss")
     parser.add_argument("--lambda_2", default=1.0, type=float, help="weight parameter for generator loss")
     parser.add_argument("--lambda_3", default=1.0, type=float, help="weight parameter for generator loss")
-    parser.add_argument("--reg_term", default=0.00001, type=float, help="A term for parameter regularization.")
+    parser.add_argument("--reg_term", default=0.0001, type=float, help="A term for parameter regularization.")
     parser.add_argument("--rec_layer_units",
                         default=[128, 64, 32, 16, 8],
                         type=list,
