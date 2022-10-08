@@ -1,14 +1,14 @@
 # FAiR
 Code repository for "Mitigating Popularity Bias for Users and Items with Fairness-centric Adaptive Recommendation" that will be published on Transaction on Information Systems (TOIS).
 ## 1. Description for each file
-	dataloader.py : some ultilities to load the raw data and make it in a proper format for our model.
+	dataloader.py : some ultilities to load the raw data and make it in proper format for our model.
 	Model.py : the implementation of FAiR model and training steps.
 	Evaluator.py : some ultilities to rank items and calculate various metrics for evaluation of effective and fairness.
 	main.py : the example codes for training and testing the model.
 
 ## 2. Requirements (Environment)
 	python >= 3.6
-	tensorflow >= 2.6.0
+	tensorflow >= 2.2.0
   	numpy
   	pandas
   	tqdm 
@@ -38,7 +38,7 @@ It is also possible to use reader's own dataloader to produce proper formatted d
 
 ## 5. Other instructions
 
-The implementation of different components of FAiR can be found in Model.py (i.e., class `Filter`, `Discriminator` and `BaseRecModel`). The feature initialization (i.e., `pertrain()` in class `FAiR`) and adversarial training process (i.e., `adv_train()` in class `FAiR`) are also in the same file. Readers can have their own implementations on those compoments using other kinds of backbones.
+The implementation of different components of FAiR can be found in Model.py (i.e., class `Filter`, `Discriminator` and `BaseRecModel`). The feature initialization (i.e., `pertrain()` in class `FAiR`) and adversarial training process (i.e., `adv_train()` in class `FAiR`) are also in the same file. Readers can have their own implementations on those components using other kinds of backbones.
 
 ## 6. Contact
 
