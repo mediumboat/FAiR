@@ -12,6 +12,7 @@ from tensorflow.keras.metrics import Mean
 
 @register_keras_serializable(package='Custom', name='l2')
 class L2Regularizer_to_one(tf.keras.regularizers.Regularizer):
+    # Unlike traditional L2 regularization that forces variables to be 0, this forces variables to be 1.
     def __init__(self, l2=0.01):
         self.l2 = l2
 
@@ -23,7 +24,7 @@ class L2Regularizer_to_one(tf.keras.regularizers.Regularizer):
 
 
 class Filter(Model, ABC):
-    # In the released code, the FiLM is implemented in a slightly diffrent way from the paper , which do not significantly affect the main results/conclusions. 
+    # In the released code, the FiLM is implemented in a slightly diffrent way from the paper to improve the efficiency, which does not significantly affect the main results/conclusions. 
     def __init__(self, flags):
         super(Filter, self).__init__()
         self.filter_units = flags.filter_units
