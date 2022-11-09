@@ -23,8 +23,7 @@ class L2Regularizer_to_one(tf.keras.regularizers.Regularizer):
 
 
 class Filter(Model, ABC):
-    # In the released code, the FiLM is implemented in a more 
-    # efficient way other than what is in the paper, which do not significantly affect the main results. 
+    # In the released code, the FiLM is implemented in a slightly diffrent way from the paper , which do not significantly affect the main results/conclusions. 
     def __init__(self, flags):
         super(Filter, self).__init__()
         self.filter_units = flags.filter_units
