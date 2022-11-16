@@ -38,10 +38,10 @@ class Filter(Model, ABC):
                 Dense(unit, activation='relu', name='filter_{}'.format(i)))
             self.film_alpha_layers.append(
                 Dense(unit, activation=None, name='alpha_{}'.format(i),
-                      kernel_regularizer=L2Regularizer_to_one(self.reg_term), use_bias=False))
+                      activity_regularizer=L2Regularizer_to_one(self.reg_term), use_bias=False))
             self.film_beta_layers.append(
                 Dense(unit, activation=None, name='beta_{}'.format(i),
-                      kernel_regularizer=L2(self.reg_term), use_bias=False))
+                      activity_regularizer=L2(self.reg_term), use_bias=False))
             self.bn_layers.append(BatchNormalization())
 
     def call(self, inputs, training):
