@@ -24,7 +24,7 @@ def train_test(flags, n_users, n_items, x_train, x_val, x_test, y_train, y_val, 
             for user_t, item_t, y_t in train_data:
                 if epoch < flag.n_pretrain:
                     model.pretrain((user_t, item_t, y_t))
-                    model.pretrain_loss_tracker.reset_states()
+                    # model.pretrain_loss_tracker.reset_states()
                 else:
                     model.adv_train((user_t, item_t, y_t))
                 t.update()
